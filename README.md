@@ -4,9 +4,9 @@ This project implements a complete test bench system for controlling and monitor
 
 ---
 
-## Table of Contents
+## 📑 Table of Contents
 - [Design and Development of a Test Bench for Diagnosing Radiator Fan DC Motors in Engine Cooling Systems](#design-and-development-of-a-test-bench-for-diagnosing-radiator-fan-dc-motors-in-engine-cooling-systems)
-  - [Table of Contents](#table-of-contents)
+  - [📑 Table of Contents](#-table-of-contents)
   - [📷 System Overview](#-system-overview)
   - [📁 Project Structure](#-project-structure)
   - [🔧 Hardware Components](#-hardware-components)
