@@ -1,3 +1,0 @@
-CAN_processing.c:12:6:CAN_Init	16	static
-CAN_processing.c:30:6:CAN_Send_Specific_Message	16	static
-CAN_processing.c:46:6:CAN_Processing	16	static
