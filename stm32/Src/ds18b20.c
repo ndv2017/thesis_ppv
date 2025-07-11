@@ -100,7 +100,7 @@ void DS18B20_Processing(void)
 	Temp = (Temp_MSB << 8) | Temp_LSB;
 	Temperature = (float)Temp/16.0;  // resolution is 0.0625
 
-//	HAL_Delay(1000);
+//	HAL_Delay(750);
 }
 
 float DS18B20_GetTemp(void)

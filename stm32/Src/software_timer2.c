@@ -25,6 +25,9 @@ void timer2Run(void)
 {
 	for (uint8_t i = 0; i < TIMER2_NUMBER; i++)
 	{
-		if (--timer2_counters[i] <= 0)	timer2_flags[i] = 1;
+		if (timer2_counters[i] > 0) {
+		    timer2_counters[i]--;
+		    if (timer2_counters[i] == 0) timer2_flags[i] = 1;
+		}
 	}
 }

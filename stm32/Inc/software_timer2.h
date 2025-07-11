@@ -9,7 +9,8 @@
 
 #include "main.h"
 
-#define TIMER2_NUMBER 3
+#define TIMER2_NUMBER 8		//timer num 3 4 5 6 for DC's parameters
+// timer num 7 for torque
 
 extern uint8_t timer2_flags[TIMER2_NUMBER];
 

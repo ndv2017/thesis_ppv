@@ -97,7 +97,7 @@ bool CANSPI_Initialize(void)
   RXF4reg.RXF4EID0 = 0x00;
   
   RXF5reg.RXF5SIDH = 0x00;
-  RXF5reg.RXF5SIDL = 0x08;
+  RXF5reg.RXF5SIDL = 0x08; // recheck //
   RXF5reg.RXF5EID8 = 0x00;
   RXF5reg.RXF5EID0 = 0x00;
   

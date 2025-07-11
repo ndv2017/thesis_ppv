@@ -21,7 +21,7 @@ void LED_pwm_Init(void)
 		HAL_Delay(20);
 	}
 
-//	Set_duty_cycle_TIM1_CH2(DUTY_CYCLE_INIT);
+	Set_duty_cycle_TIM1_CH2(DUTY_CYCLE_INIT);
 }
 
 void LED_pwm_processing(void)
