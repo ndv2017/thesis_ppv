@@ -36,23 +36,24 @@ This project implements a complete test bench system for controlling and monitor
 ```
 .
 ├── README.md
+├── deploy.sh                         # Deployment script to build and sync Flutter app to Raspberry Pi
 ├── poster.jpg
-├── raspi_3b                  # Raspberry Pi software
-│   ├── dc_motor_tracker      # Flutter application for motor data visualization
-│   │   ├── assets            # Logos and diagrams
-│   │   ├── lib               # Dart source files
-│   │   ├── motor_data_simulator.py  # Optional data simulator
-│   │   └── pubspec.yaml      # Flutter package definitions
+├── raspi_3b                          # Raspberry Pi software
+│   ├── dc_motor_tracker              # Flutter application for motor data visualization
+│   │   ├── assets                    # Logos and diagrams
+│   │   ├── lib                       # Dart source files
+│   │   ├── motor_data_simulator.py   # Optional data simulator
+│   │   └── pubspec.yaml              # Flutter package definitions
 │   └── python
-│       └── receive_from_stm32.py  # CAN data receiver via SPI
+│       └── receive_from_stm32.py     # CAN data receiver via SPI
 ├── result
-│   └── demo.mp4              # Project demonstration video
+│   └── demo.mp4                      # Project demonstration video
 ├── schematic
 │   ├── schematic_diagram_base.png
 │   └── schematic_diagram_overview.png
-└── stm32                     # Firmware for STM32 microcontrollers
-    ├── Inc                  # Header files
-    └── Src                  # Source files (C)
+└── stm32                             # Firmware for STM32 microcontrollers
+    ├── Inc                           # Header files
+    └── Src                           # Source files (C)
 ```
 
 ---
@@ -114,11 +115,19 @@ This project implements a complete test bench system for controlling and monitor
 
 #### 🔹 For Raspberry Pi (Flutter App)
 
-1. Navigate to `raspi_3b/dc_motor_tracker`.
-2. Ensure `flutter-pi` is installed and configured.
+1. Ensure `flutter-pi` is installed and configured on your Raspberry Pi.
 3. Add the `assets` directory with necessary images and logos, and modify `pubspec.yaml` accordingly.
 4. Add those sources in `lib` directory.
 5. Also add the folder `python` with the script `receive_from_stm32.py` to handle CAN data reception.
+6. Set the correct `PROJECT_DIR`, `PI_USER`, `PI_IP`, and `PI_PROJECT_DIR` in the `deploy.sh` script.
+7. Run the deployment script from your development machine:
+   ```bash
+   ./deploy.sh
+   ```
+   This script will:
+   - Build the Flutter app using flutterpi_tool
+   - Sync the assets to the Raspberry Pi using rsync
+   - Optionally launch the app via ssh on the Pi
 
 ---
 
@@ -144,7 +153,7 @@ Check out the demo video: 📂 [`result/demo.mp4`](./result/demo.mp4)
 
 ## 🛠️ Tools Used
 
-* Language: C (STM32), Dart (Flutter), Python
+* Language: C (STM32), Dart (Flutter), Python, Bash (for deployment)
 * IDEs: STM32CubeIDE, Visual Studio Code
 * Communication Protocol: CAN (via MCP2515)
 * GUI Framework: Flutter (via `flutter-pi` on Raspberry Pi)
